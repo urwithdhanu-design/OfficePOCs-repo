@@ -1,0 +1,300 @@
+{
+  "info": {
+    "_postman_id": "personalization-agent-collection",
+    "name": "Credit Card Personalization Agent",
+    "description": "Test Agent APIs (Gemini + LangGraph) and Mock Banking APIs.\n\n**Setup:**\n1. Import this collection\n2. Import `Personalization-Agent.postman_environment.json`\n3. Select the environment in Postman\n4. Start server: `python run.py`\n5. Seed data: `python -m app.data.seed_mock_data`\n\n**Demo customers:** CUST001 (heavy diner), CUST002 (smart spender), CUST003 (large purchases + EMIs)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:8000" },
+    { "key": "customerCode", "value": "CUST001" }
+  ],
+  "item": [
+    {
+      "name": "Health & Info",
+      "item": [
+        {
+          "name": "Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/health",
+            "description": "Verify API server is running."
+          }
+        },
+        {
+          "name": "Root / API Index",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/",
+            "description": "Lists available endpoints and demo customer codes."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Agent APIs",
+      "description": "AI financial coach (requires GOOGLE_API_KEY in .env for chat/insights).",
+      "item": [
+        {
+          "name": "Chat - Full Analyze (CUST001)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"customer_code\": \"{{customerCode}}\",\n  \"message\": \"analyze\"\n}"
+            },
+            "url": "{{baseUrl}}/api/v1/agent/chat",
+            "description": "Full personalized education based on 6-month behavior. Uses supervisor + specialist agents + synthesizer."
+          }
+        },
+        {
+          "name": "Chat - Dining Rewards Question",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"customer_code\": \"CUST001\",\n  \"message\": \"How can I earn more rewards on my dining spends?\"\n}"
+            },
+            "url": "{{baseUrl}}/api/v1/agent/chat",
+            "description": "Best for CUST001 (heavy diner persona)."
+          }
+        },
+        {
+          "name": "Chat - Credit Utilization (CUST001)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"customer_code\": \"CUST001\",\n  \"message\": \"Is my credit utilization hurting my credit score? What should I do?\"\n}"
+            },
+            "url": "{{baseUrl}}/api/v1/agent/chat"
+          }
+        },
+        {
+          "name": "Chat - EMI Advice (CUST003)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"customer_code\": \"CUST003\",\n  \"message\": \"Should I convert my large purchases to EMI?\"\n}"
+            },
+            "url": "{{baseUrl}}/api/v1/agent/chat",
+            "description": "CUST003 has multiple active EMIs and large purchases."
+          }
+        },
+        {
+          "name": "Insights - Full Report",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"customer_code\": \"{{customerCode}}\"\n}"
+            },
+            "url": "{{baseUrl}}/api/v1/agent/insights",
+            "description": "Structured education report without free-form chat. Supervisor picks agents automatically."
+          }
+        },
+        {
+          "name": "Insights - Focused (rewards + credit + fees)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"customer_code\": \"CUST001\",\n  \"focus_areas\": [\"rewards\", \"credit_health\", \"fees\"]\n}"
+            },
+            "url": "{{baseUrl}}/api/v1/agent/insights",
+            "description": "Optional focus_areas: rewards, credit_health, emi, spending, fees"
+          }
+        },
+        {
+          "name": "Quick Tips (No LLM)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/v1/agent/customers/{{customerCode}}/quick-tips",
+            "description": "Rule-based tips from behavior profile. Works without GOOGLE_API_KEY."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Mock Banking APIs",
+      "description": "Simulated banking endpoints with 6 months of seed data.",
+      "item": [
+        {
+          "name": "List All Customers",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/v1/banking/customers"
+          }
+        },
+        {
+          "name": "Get Customer by Code",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/v1/banking/customers/{{customerCode}}"
+          }
+        },
+        {
+          "name": "Transactions (all)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/v1/banking/customers/{{customerCode}}/transactions"
+          }
+        },
+        {
+          "name": "Transactions - Dining only",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/banking/customers/{{customerCode}}/transactions?category=Dining",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "banking", "customers", "{{customerCode}}", "transactions"],
+              "query": [
+                { "key": "category", "value": "Dining" },
+                { "key": "from_date", "value": "2025-01-01", "disabled": true },
+                { "key": "to_date", "value": "2025-06-30", "disabled": true }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Transactions - Date range",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/api/v1/banking/customers/{{customerCode}}/transactions?from_date=2025-11-01&to_date=2026-05-19",
+              "host": ["{{baseUrl}}"],
+              "path": ["api", "v1", "banking", "customers", "{{customerCode}}", "transactions"],
+              "query": [
+                { "key": "from_date", "value": "2025-11-01" },
+                { "key": "to_date", "value": "2026-05-19" }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Payment History",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/v1/banking/customers/{{customerCode}}/payments"
+          }
+        },
+        {
+          "name": "Active EMIs",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/v1/banking/customers/{{customerCode}}/emis",
+            "description": "CUST003 has 2 active EMIs."
+          }
+        },
+        {
+          "name": "Rewards Summary",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/v1/banking/customers/{{customerCode}}/rewards"
+          }
+        },
+        {
+          "name": "Spending Summary",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/v1/banking/customers/{{customerCode}}/spending/summary"
+          }
+        },
+        {
+          "name": "Behavior Profile (6 months)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/v1/banking/customers/{{customerCode}}/behavior",
+            "description": "Full behavior analysis used by the agent."
+          }
+        },
+        {
+          "name": "Card Utilization",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": "{{baseUrl}}/api/v1/banking/customers/{{customerCode}}/card/utilization"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Test Flows (run in order)",
+      "description": "Suggested sequence to validate end-to-end.",
+      "item": [
+        {
+          "name": "1. Health Check",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/health"
+          }
+        },
+        {
+          "name": "2. List Customers",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/banking/customers"
+          }
+        },
+        {
+          "name": "3. Behavior Profile CUST001",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/banking/customers/CUST001/behavior"
+          }
+        },
+        {
+          "name": "4. Quick Tips (no API key needed)",
+          "request": {
+            "method": "GET",
+            "url": "{{baseUrl}}/api/v1/agent/customers/CUST001/quick-tips"
+          }
+        },
+        {
+          "name": "5. Agent Chat Analyze",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"customer_code\": \"CUST001\",\n  \"message\": \"analyze\"\n}"
+            },
+            "url": "{{baseUrl}}/api/v1/agent/chat"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,555 @@
+[
+  {
+    "id": "bt-enabled",
+    "code": "BT_ENABLED",
+    "name": "Balance Transfer Enabled",
+    "description": "Allow balance transfers from other cards",
+    "category": "Balance Transfer & Interest"
+  },
+  {
+    "id": "bt-current-account",
+    "code": "BT_CURRENT",
+    "name": "BT to Current Account",
+    "description": "Balance transfer to current account feature",
+    "category": "Balance Transfer & Interest"
+  },
+  {
+    "id": "bt-promotional-rate",
+    "code": "BT_PROMO_RATE",
+    "name": "Promotional BT Rate",
+    "description": "Special promotional rate for balance transfers",
+    "category": "Balance Transfer & Interest"
+  },
+  {
+    "id": "purchase-apr",
+    "code": "PURCHASE_APR",
+    "name": "Purchase APR Configuration",
+    "description": "Annual percentage rate for purchases",
+    "category": "Balance Transfer & Interest"
+  },
+  {
+    "id": "interest-free-period",
+    "code": "INTEREST_FREE",
+    "name": "Interest-Free Period",
+    "description": "Interest-free period on purchases",
+    "category": "Balance Transfer & Interest"
+  },
+  {
+    "id": "cash-advance",
+    "code": "CASH_ADVANCE",
+    "name": "Cash Advance Enabled",
+    "description": "Allow cash withdrawals from ATMs",
+    "category": "Cash & Withdrawals"
+  },
+  {
+    "id": "atm-withdrawal-limit",
+    "code": "ATM_LIMIT",
+    "name": "ATM Withdrawal Limits",
+    "description": "Daily ATM withdrawal limit configuration",
+    "category": "Cash & Withdrawals"
+  },
+  {
+    "id": "foreign-atm-fees",
+    "code": "FOREIGN_ATM_FEE",
+    "name": "Foreign ATM Fees",
+    "description": "Fees for ATM withdrawals abroad",
+    "category": "Cash & Withdrawals"
+  },
+  {
+    "id": "cashback-rewards",
+    "code": "CASHBACK",
+    "name": "Cashback Rewards",
+    "description": "Earn cashback on purchases",
+    "category": "Rewards & Benefits"
+  },
+  {
+    "id": "points-rewards",
+    "code": "POINTS_REWARDS",
+    "name": "Points Rewards Program",
+    "description": "Earn reward points on spending",
+    "category": "Rewards & Benefits"
+  },
+  {
+    "id": "travel-miles",
+    "code": "TRAVEL_MILES",
+    "name": "Travel Miles Program",
+    "description": "Earn air miles on purchases",
+    "category": "Rewards & Benefits"
+  },
+  {
+    "id": "purchase-protection",
+    "code": "PURCHASE_PROTECT",
+    "name": "Purchase Protection Insurance",
+    "description": "Insurance coverage for purchases",
+    "category": "Rewards & Benefits"
+  },
+  {
+    "id": "travel-insurance",
+    "code": "TRAVEL_INS",
+    "name": "Travel Insurance",
+    "description": "Complimentary travel insurance coverage",
+    "category": "Rewards & Benefits"
+  },
+  {
+    "id": "extended-warranty",
+    "code": "EXT_WARRANTY",
+    "name": "Extended Warranty",
+    "description": "Extended warranty on purchases",
+    "category": "Rewards & Benefits"
+  },
+  {
+    "id": "contactless-payment",
+    "code": "CONTACTLESS",
+    "name": "Contactless Payment",
+    "description": "Contactless payment technology enabled",
+    "category": "Payment & Security"
+  },
+  {
+    "id": "apple-pay",
+    "code": "APPLE_PAY",
+    "name": "Apple Pay Compatible",
+    "description": "Compatible with Apple Pay mobile wallet",
+    "category": "Payment & Security"
+  },
+  {
+    "id": "google-pay",
+    "code": "GOOGLE_PAY",
+    "name": "Google Pay Compatible",
+    "description": "Compatible with Google Pay mobile wallet",
+    "category": "Payment & Security"
+  },
+  {
+    "id": "3d-secure",
+    "code": "3D_SECURE",
+    "name": "3D Secure Verification",
+    "description": "Enhanced online payment security",
+    "category": "Payment & Security"
+  },
+  {
+    "id": "chip-pin",
+    "code": "CHIP_PIN",
+    "name": "Chip and PIN",
+    "description": "EMV chip and PIN technology",
+    "category": "Payment & Security"
+  },
+  {
+    "id": "fraud-protection",
+    "code": "FRAUD_PROTECT",
+    "name": "Fraud Protection",
+    "description": "24/7 fraud monitoring and protection",
+    "category": "Payment & Security"
+  },
+  {
+    "id": "additional-cardholder",
+    "code": "ADD_CARDHOLDER",
+    "name": "Additional Cardholders",
+    "description": "Allow additional cardholders on the account",
+    "category": "Account Management"
+  },
+  {
+    "id": "credit-limit-increase",
+    "code": "CREDIT_INCREASE",
+    "name": "Credit Limit Increase Option",
+    "description": "Allow customers to request credit limit increases",
+    "category": "Account Management"
+  },
+  {
+    "id": "overlimit-facility",
+    "code": "OVERLIMIT",
+    "name": "Overlimit Facility",
+    "description": "Allow transactions over credit limit",
+    "category": "Account Management"
+  },
+  {
+    "id": "payment-holiday",
+    "code": "PAYMENT_HOLIDAY",
+    "name": "Payment Holiday",
+    "description": "Option to request payment holidays",
+    "category": "Account Management"
+  },
+  {
+    "id": "direct-debit",
+    "code": "DIRECT_DEBIT",
+    "name": "Direct Debit Setup",
+    "description": "Automatic payment via direct debit",
+    "category": "Account Management"
+  },
+  {
+    "id": "statement-option",
+    "code": "STMT_OPTION",
+    "name": "Statement Delivery Options",
+    "description": "Configurable statement delivery (paper/electronic)",
+    "category": "Statements & Communication"
+  },
+  {
+    "id": "statement-default",
+    "code": "STMT_DEFAULT",
+    "name": "Default Statement Setting",
+    "description": "Default statement configuration",
+    "category": "Statements & Communication"
+  },
+  {
+    "id": "paperless-statements",
+    "code": "PAPERLESS",
+    "name": "Paperless Statements",
+    "description": "Electronic statements only",
+    "category": "Statements & Communication"
+  },
+  {
+    "id": "correspondence-option",
+    "code": "CORR_OPTION",
+    "name": "Correspondence Options",
+    "description": "Customer correspondence preferences",
+    "category": "Statements & Communication"
+  },
+  {
+    "id": "correspondence-default",
+    "code": "CORR_DEFAULT",
+    "name": "Default Correspondence",
+    "description": "Default correspondence settings",
+    "category": "Statements & Communication"
+  },
+  {
+    "id": "account-alerts",
+    "code": "ACCOUNT_ALERTS",
+    "name": "Account Alerts",
+    "description": "SMS/email alerts for transactions",
+    "category": "Statements & Communication"
+  },
+  {
+    "id": "mobile-app-access",
+    "code": "MOBILE_APP",
+    "name": "Mobile App Access",
+    "description": "Access account via mobile banking app",
+    "category": "Statements & Communication"
+  },
+  {
+    "id": "annual-fee",
+    "code": "ANNUAL_FEE",
+    "name": "Annual Fee",
+    "description": "Annual card membership fee",
+    "category": "Fees & Charges"
+  },
+  {
+    "id": "foreign-transaction-fee",
+    "code": "FOREIGN_TXN_FEE",
+    "name": "Foreign Transaction Fee",
+    "description": "Fee for purchases in foreign currency",
+    "category": "Fees & Charges"
+  },
+  {
+    "id": "late-payment-fee",
+    "code": "LATE_FEE",
+    "name": "Late Payment Fee",
+    "description": "Fee for missed or late payments",
+    "category": "Fees & Charges"
+  },
+  {
+    "id": "balance-transfer-fee",
+    "code": "BT_FEE",
+    "name": "Balance Transfer Fee",
+    "description": "Fee for balance transfer transactions",
+    "category": "Fees & Charges"
+  },
+  {
+    "id": "card-replacement",
+    "code": "CARD_REPLACE",
+    "name": "Card Replacement Service",
+    "description": "Emergency card replacement options",
+    "category": "Card Services"
+  },
+  {
+    "id": "express-delivery",
+    "code": "EXPRESS_DELIVERY",
+    "name": "Express Card Delivery",
+    "description": "Fast-track card delivery option",
+    "category": "Card Services"
+  },
+  {
+    "id": "emergency-cash",
+    "code": "EMERGENCY_CASH",
+    "name": "Emergency Cash Service",
+    "description": "Emergency cash advance when abroad",
+    "category": "Card Services"
+  },
+  {
+    "id": "concierge-service",
+    "code": "CONCIERGE",
+    "name": "Concierge Service",
+    "description": "24/7 concierge assistance service",
+    "category": "Card Services"
+  },
+  {
+    "id": "airport-lounge",
+    "code": "LOUNGE_ACCESS",
+    "name": "Airport Lounge Access",
+    "description": "Complimentary airport lounge access",
+    "category": "Card Services"
+  },
+  {
+    "id": "instant-notifications",
+    "code": "INSTANT_NOTIF",
+    "name": "Instant Spending Notifications",
+    "description": "Real-time push notifications for every transaction",
+    "category": "Digital Banking & App"
+  },
+  {
+    "id": "virtual-cards",
+    "code": "VIRTUAL_CARD",
+    "name": "Virtual Card Numbers",
+    "description": "Generate disposable virtual cards for online shopping",
+    "category": "Digital Banking & App"
+  },
+  {
+    "id": "freeze-card",
+    "code": "FREEZE_CARD",
+    "name": "Instant Card Freeze/Unfreeze",
+    "description": "Freeze and unfreeze card instantly in-app",
+    "category": "Digital Banking & App"
+  },
+  {
+    "id": "spending-controls",
+    "code": "SPENDING_CTRL",
+    "name": "Advanced Spending Controls",
+    "description": "Set custom spending limits by merchant category",
+    "category": "Digital Banking & App"
+  },
+  {
+    "id": "merchant-blocking",
+    "code": "MERCHANT_BLOCK",
+    "name": "Merchant Category Blocking",
+    "description": "Block specific merchant types (gambling, etc.)",
+    "category": "Digital Banking & App"
+  },
+  {
+    "id": "subscription-management",
+    "code": "SUB_MGMT",
+    "name": "Subscription Management",
+    "description": "Track and manage recurring subscriptions",
+    "category": "Digital Banking & App"
+  },
+  {
+    "id": "spending-insights",
+    "code": "SPEND_INSIGHTS",
+    "name": "AI-Powered Spending Insights",
+    "description": "Intelligent spending analysis and categorization",
+    "category": "Digital Banking & App"
+  },
+  {
+    "id": "budgeting-tools",
+    "code": "BUDGET_TOOLS",
+    "name": "Built-in Budgeting Tools",
+    "description": "Create and track spending budgets by category",
+    "category": "Digital Banking & App"
+  },
+  {
+    "id": "pots-savings",
+    "code": "POTS_SAVINGS",
+    "name": "Savings Pots/Spaces",
+    "description": "Create separate pots for savings goals",
+    "category": "Digital Banking & App"
+  },
+  {
+    "id": "round-up-savings",
+    "code": "ROUNDUP_SAVE",
+    "name": "Round-Up Savings",
+    "description": "Automatically round up purchases and save the difference",
+    "category": "Digital Banking & App"
+  },
+  {
+    "id": "credit-score-tracking",
+    "code": "CREDIT_SCORE",
+    "name": "Credit Score Tracking",
+    "description": "Free credit score monitoring in-app",
+    "category": "Financial Wellbeing"
+  },
+  {
+    "id": "credit-builder",
+    "code": "CREDIT_BUILD",
+    "name": "Credit Builder Tool",
+    "description": "Help build credit history with responsible use",
+    "category": "Financial Wellbeing"
+  },
+  {
+    "id": "financial-education",
+    "code": "FIN_EDUCATION",
+    "name": "Financial Education Content",
+    "description": "In-app financial literacy resources and tips",
+    "category": "Financial Wellbeing"
+  },
+  {
+    "id": "spending-summary",
+    "code": "SPEND_SUMMARY",
+    "name": "Weekly/Monthly Spending Summary",
+    "description": "Automated spending reports and insights",
+    "category": "Financial Wellbeing"
+  },
+  {
+    "id": "bill-splitting",
+    "code": "BILL_SPLIT",
+    "name": "Bill Splitting",
+    "description": "Split bills with friends directly in-app",
+    "category": "Financial Wellbeing"
+  },
+  {
+    "id": "receipt-capture",
+    "code": "RECEIPT_SCAN",
+    "name": "Receipt Capture & Storage",
+    "description": "Scan and store receipts digitally",
+    "category": "Financial Wellbeing"
+  },
+  {
+    "id": "zero-fx-fees",
+    "code": "ZERO_FX",
+    "name": "Zero Foreign Exchange Fees",
+    "description": "No fees on international transactions",
+    "category": "Modern Payments"
+  },
+  {
+    "id": "multi-currency",
+    "code": "MULTI_CURRENCY",
+    "name": "Multi-Currency Support",
+    "description": "Hold and spend in multiple currencies",
+    "category": "Modern Payments"
+  },
+  {
+    "id": "crypto-purchases",
+    "code": "CRYPTO_BUY",
+    "name": "Cryptocurrency Purchases",
+    "description": "Buy and sell cryptocurrency directly",
+    "category": "Modern Payments"
+  },
+  {
+    "id": "bnpl-integration",
+    "code": "BNPL",
+    "name": "Buy Now Pay Later Integration",
+    "description": "Integrated BNPL for larger purchases (Monzo Flex)",
+    "category": "Modern Payments"
+  },
+  {
+    "id": "open-banking-payments",
+    "code": "OPEN_BANKING",
+    "name": "Pay by Bank (Open Banking)",
+    "description": "Direct bank-to-bank payments",
+    "category": "Modern Payments"
+  },
+  {
+    "id": "request-payment",
+    "code": "PAYMENT_REQUEST",
+    "name": "Payment Request Feature",
+    "description": "Request money from other users",
+    "category": "Modern Payments"
+  },
+  {
+    "id": "scheduled-payments",
+    "code": "SCHEDULED_PAY",
+    "name": "Scheduled Payments",
+    "description": "Schedule future card payments",
+    "category": "Modern Payments"
+  },
+  {
+    "id": "biometric-auth",
+    "code": "BIOMETRIC_AUTH",
+    "name": "Biometric Authentication",
+    "description": "Fingerprint and Face ID for app access",
+    "category": "Security & Control"
+  },
+  {
+    "id": "transaction-disputes",
+    "code": "TXN_DISPUTE",
+    "name": "In-App Transaction Disputes",
+    "description": "Report and dispute transactions directly in app",
+    "category": "Security & Control"
+  },
+  {
+    "id": "location-based-security",
+    "code": "LOCATION_SEC",
+    "name": "Location-Based Security",
+    "description": "Block transactions outside specific locations",
+    "category": "Security & Control"
+  },
+  {
+    "id": "atm-only-mode",
+    "code": "ATM_ONLY",
+    "name": "ATM-Only Mode",
+    "description": "Disable all purchases, allow ATM withdrawals only",
+    "category": "Security & Control"
+  },
+  {
+    "id": "online-only-mode",
+    "code": "ONLINE_ONLY",
+    "name": "Online-Only Transactions",
+    "description": "Disable physical card, enable online only",
+    "category": "Security & Control"
+  },
+  {
+    "id": "gambling-block",
+    "code": "GAMBLING_BLOCK",
+    "name": "Gambling Transaction Block",
+    "description": "Permanently block gambling transactions",
+    "category": "Security & Control"
+  },
+  {
+    "id": "carbon-tracking",
+    "code": "CARBON_TRACK",
+    "name": "Carbon Footprint Tracking",
+    "description": "Track carbon impact of purchases",
+    "category": "Sustainability & Social"
+  },
+  {
+    "id": "merchant-ratings",
+    "code": "MERCHANT_RATE",
+    "name": "Merchant Ratings & Reviews",
+    "description": "Rate merchants and view community feedback",
+    "category": "Sustainability & Social"
+  },
+  {
+    "id": "charity-roundup",
+    "code": "CHARITY_ROUND",
+    "name": "Charity Round-Up",
+    "description": "Round up purchases and donate to charity",
+    "category": "Sustainability & Social"
+  },
+  {
+    "id": "sustainable-spending",
+    "code": "SUSTAINABLE",
+    "name": "Sustainable Spending Insights",
+    "description": "Identify eco-friendly merchants and alternatives",
+    "category": "Sustainability & Social"
+  },
+  {
+    "id": "salary-advance",
+    "code": "SALARY_ADVANCE",
+    "name": "Salary Advance Feature",
+    "description": "Access salary early when needed",
+    "category": "Premium & Lifestyle"
+  },
+  {
+    "id": "overdraft-buffer",
+    "code": "OVERDRAFT_BUFFER",
+    "name": "Fee-Free Overdraft Buffer",
+    "description": "Small overdraft buffer without fees",
+    "category": "Premium & Lifestyle"
+  },
+  {
+    "id": "perks-program",
+    "code": "PERKS_PROGRAM",
+    "name": "Perks & Discounts Program",
+    "description": "Exclusive partner discounts and offers",
+    "category": "Premium & Lifestyle"
+  },
+  {
+    "id": "price-protection",
+    "code": "PRICE_PROTECT",
+    "name": "Price Protection",
+    "description": "Refund price difference if item goes on sale",
+    "category": "Premium & Lifestyle"
+  },
+  {
+    "id": "investment-integration",
+    "code": "INVEST_INTG",
+    "name": "Investment Platform Integration",
+    "description": "Invest spare change or savings directly",
+    "category": "Premium & Lifestyle"
+  }
+]
