@@ -1,0 +1,309 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Lloyds Banking Group Design System
+   Primary: Lloyds Dark Green #006A4D
+   All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Lloyds Green Theme - Light Mode */
+    --background: 150 20% 98%;
+    --foreground: 160 30% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 160 30% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 160 30% 10%;
+
+    /* Lloyds Primary Green: #006A4D = hsl(163, 100%, 21%) */
+    --primary: 163 100% 21%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 163 20% 92%;
+    --secondary-foreground: 160 30% 10%;
+
+    --muted: 160 15% 95%;
+    --muted-foreground: 160 15% 40%;
+
+    --accent: 163 80% 30%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 160 20% 88%;
+    --input: 160 20% 88%;
+    --ring: 163 100% 21%;
+
+    --radius: 0.5rem;
+    
+    /* Brand colors */
+    --lloyds: 163 100% 21%;
+    --lloyds-foreground: 0 0% 100%;
+    --lloyds-light: 163 60% 40%;
+    --halifax: 211 100% 45%;
+    --halifax-foreground: 0 0% 100%;
+    --bos: 220 60% 25%;
+    --bos-foreground: 0 0% 100%;
+    --mbna: 18 95% 55%;
+    --mbna-foreground: 0 0% 100%;
+    
+    /* Drag and drop */
+    --drop-zone: 163 20% 96%;
+    --drop-zone-active: 163 60% 90%;
+    
+    /* Success state - matches Lloyds green */
+    --success: 163 100% 21%;
+    --success-foreground: 0 0% 100%;
+
+    /* Warning */
+    --warning: 45 93% 47%;
+    --warning-foreground: 0 0% 100%;
+
+    --sidebar-background: 163 100% 21%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 0 0% 100%;
+    --sidebar-primary-foreground: 163 100% 21%;
+    --sidebar-accent: 163 80% 25%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 163 60% 30%;
+    --sidebar-ring: 163 100% 40%;
+
+    /* Chart colors */
+    --chart-1: 163 100% 21%;
+    --chart-2: 163 60% 40%;
+    --chart-3: 211 100% 45%;
+    --chart-4: 220 60% 25%;
+    --chart-5: 18 95% 55%;
+  }
+
+  .dark {
+    /* Lloyds Green Theme - Dark Mode */
+    --background: 160 30% 8%;
+    --foreground: 150 20% 95%;
+
+    --card: 160 25% 12%;
+    --card-foreground: 150 20% 95%;
+
+    --popover: 160 25% 12%;
+    --popover-foreground: 150 20% 95%;
+
+    --primary: 163 80% 40%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 160 25% 18%;
+    --secondary-foreground: 150 20% 95%;
+
+    --muted: 160 25% 18%;
+    --muted-foreground: 160 15% 60%;
+
+    --accent: 163 70% 35%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 160 25% 20%;
+    --input: 160 25% 20%;
+    --ring: 163 80% 40%;
+    
+    --drop-zone: 160 25% 15%;
+    --drop-zone-active: 163 60% 25%;
+    
+    --sidebar-background: 160 30% 6%;
+    --sidebar-foreground: 150 20% 95%;
+    --sidebar-primary: 163 80% 40%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 160 25% 15%;
+    --sidebar-accent-foreground: 150 20% 95%;
+    --sidebar-border: 160 25% 20%;
+    --sidebar-ring: 163 80% 40%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    font-family: 'Source Sans 3', ui-sans-serif, system-ui, sans-serif;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Source Sans 3', ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+    font-family: 'Source Sans 3', ui-sans-serif, system-ui, sans-serif;
+  }
+
+  button, input, select, textarea {
+    font-family: inherit;
+  }
+}
+
+/* Custom scrollbar styles */
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--border)) transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--border));
+    border-radius: 4px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background-color: hsl(var(--muted-foreground) / 0.5);
+  }
+
+  .scrollbar-track-transparent {
+    scrollbar-color: hsl(var(--border)) transparent;
+  }
+
+  .scrollbar-thumb-border::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--border));
+  }
+
+  /* Lloyds gradient utilities */
+  .bg-lloyds-gradient {
+    background: linear-gradient(135deg, hsl(163 100% 21%) 0%, hsl(163 80% 30%) 100%);
+  }
+
+  .bg-lloyds-gradient-dark {
+    background: linear-gradient(135deg, hsl(163 100% 15%) 0%, hsl(163 100% 21%) 100%);
+  }
+
+  .text-lloyds-gradient {
+    background: linear-gradient(135deg, hsl(163 100% 21%) 0%, hsl(163 60% 40%) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Smart recommendations panel */
+  .recommendations-panel {
+    position: relative;
+    background: linear-gradient(
+      135deg,
+      hsl(var(--primary) / 0.04) 0%,
+      hsl(var(--card)) 40%,
+      hsl(var(--primary) / 0.02) 100%
+    );
+  }
+
+  .recommendations-panel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(
+      135deg,
+      hsl(var(--primary) / 0.35),
+      hsl(var(--primary) / 0.08),
+      hsl(var(--primary) / 0.25)
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    animation: recommendation-border-flow 2s ease-in-out infinite;
+  }
+
+  @keyframes recommendation-border-flow {
+    0%, 100% { opacity: 0.55; }
+    50% { opacity: 1; }
+  }
+
+  .recommendation-card-highlight {
+    transition:
+      transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 0.2s ease;
+  }
+
+  .recommendation-card-highlight:hover {
+    transform: translateY(-2px);
+    box-shadow:
+      0 4px 6px -1px hsl(var(--foreground) / 0.06),
+      0 10px 20px -4px hsl(var(--primary) / 0.12);
+  }
+
+  /* Competitive benchmark panel */
+  .benchmark-panel {
+    position: relative;
+    background: linear-gradient(
+      145deg,
+      hsl(var(--primary) / 0.06) 0%,
+      hsl(var(--card)) 35%,
+      hsl(211 100% 45% / 0.04) 100%
+    );
+  }
+
+  .benchmark-panel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(
+      120deg,
+      hsl(var(--primary) / 0.4),
+      hsl(211 100% 45% / 0.2),
+      hsl(270 60% 50% / 0.25),
+      hsl(var(--primary) / 0.3)
+    );
+    background-size: 200% 200%;
+    animation: benchmark-border-shift 4s ease infinite;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  @keyframes benchmark-border-shift {
+    0%, 100% { background-position: 0% 50%; opacity: 0.7; }
+    50% { background-position: 100% 50%; opacity: 1; }
+  }
+
+  @keyframes benchmark-bar-grow {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+  }
+
+  @keyframes benchmark-fade-up {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .benchmark-animate-in {
+    animation: benchmark-fade-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .benchmark-bar-fill {
+    transform-origin: left;
+    animation: benchmark-bar-grow 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+}
